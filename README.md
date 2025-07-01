@@ -4,11 +4,19 @@
   </a>
 </div>
 
+<div align="center">
+
 # Instagram Follow Spy
+
+</div>
 
 ![repository-template-button](./assets/insta-spy-banner.png)
 
 A [web scraper](https://en.wikipedia.org/wiki/Web_scraping) script for Instagram Web that allows you to find out who doesn't follow you and who you don't follow back, all through a pleasant and intuitive interface. You can also view the most recent analysis performed.
+
+## Motivation
+
+I took part as an instructor in a programming training program at a company where I worked. The focus of the challenge wasn’t on the functionality itself, but rather on showing beginners how to manipulate the DOM using *Vanilla JS*, through web scraping techniques.
 
 ## Usage
 
@@ -23,7 +31,7 @@ Suggestions:
 
 ### Install from GreasyFork (*Recommended*)
 
-Go to the [script page on GreasyFork](), then click the "Install this script" button and follow the installation process in your extension.
+Go to the [script page on GreasyFork](https://greasyfork.org/pt-BR/scripts/541297-instagram-follow-spy), then click the "Install this script" button and follow the installation process in your extension.
 
 ### Install from GitHub
 
