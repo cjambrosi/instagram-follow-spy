@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name                Instagram Follow Spy
 // @namespace           https://cjambrosi.dev.br
-// @version             1.0.1
+// @version             1.0.2
 // @description         The script is a web scraper for Instagram web, where you can find out who doesn't follow you back and who you don't follow back, with a pleasant and intuitive interface. You can also check the last analysis performed.
 // @description:pt-BR   O script é um web scraper para o Instagram web, onde permite descobrir quem não segue você e quem você não segue de volta com uma interface agradável e intuitiva. Também, é possível conferir a última analise realizada.
 // @author              cjambrosi
 // @license             MIT
-// @supportURL          https://github.com/cjambrosi/instagram-follow-spy
+// @supportURL          https://github.com/cjambrosi/instagram-follow-spy/issues
 // @match               https://www.instagram.com/*
 // @exclude             /^https?://\S+\.(txt|png|jpg|jpeg|gif|xml|svg|manifest|log|ini)[^\/]*$/
 // @icon                data:image/png;base64,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
@@ -978,6 +978,7 @@
       status = STATUS_TYPE.LOADING;
 
       AnalysisModule.toggleVisibleFollowersModal(MODAL_ACTION_TYPE.OPEN);
+      UIModule.loadSelectTabs();
       UIModule.loadContentByContext();
     },
   };
