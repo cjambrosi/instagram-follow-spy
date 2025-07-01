@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                Instagram Follow Spy
 // @namespace           https://cjambrosi.dev.br
-// @version             1.0.1
+// @version             1.0.2
 // @description         The script is a web scraper for Instagram web, where you can find out who doesn't follow you back and who you don't follow back, with a pleasant and intuitive interface. You can also check the last analysis performed.
 // @description:pt-BR   O script é um web scraper para o Instagram web, onde permite descobrir quem não segue você e quem você não segue de volta com uma interface agradável e intuitiva. Também, é possível conferir a última analise realizada.
 // @author              cjambrosi
