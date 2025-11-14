@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                Instagram Follow Spy
 // @namespace           https://cjambrosi.dev.br
-// @version             1.0.2
+// @version             1.0.3
 // @description         The script is a web scraper for Instagram web, where you can find out who doesn't follow you back and who you don't follow back, with a pleasant and intuitive interface. You can also check the last analysis performed.
 // @description:pt-BR   O script é um web scraper para o Instagram web, onde permite descobrir quem não segue você e quem você não segue de volta com uma interface agradável e intuitiva. Também, é possível conferir a última analise realizada.
 // @author              cjambrosi
@@ -60,12 +60,12 @@
     FOLLOWERS_MODAL_CLOSE_BUTTON_SELECTOR: 'button._abl-',
     FOLLOWERS_MODAL_CONTAINER_SELECTOR: 'div[role="dialog"]',
     // Scroll container DOM element
-    FOLLOWERS_MODAL_LIST_CONTAINER_SELECTOR: '.x6nl9eh.x1a5l9x9',
+    FOLLOWERS_MODAL_LIST_CONTAINER_SELECTOR: 'div.x6nl9eh.x1a5l9x9',
     FOLLOWERS_MODAL_LIST_ITEM_SELECTOR: '.x6nl9eh > div > div > div',
     FOLLOWING_MODAL_CLOSE_BUTTON_SELECTOR: 'button._abl-',
     FOLLOWING_MODAL_CONTAINER_SELECTOR: 'div[role="dialog"]',
     // Scroll container DOM element
-    FOLLOWING_MODAL_LIST_CONTAINER_SELECTOR: '.x6nl9eh.x1a5l9x9',
+    FOLLOWING_MODAL_LIST_CONTAINER_SELECTOR: 'div.x6nl9eh.x1a5l9x9',
     FOLLOWING_MODAL_LIST_ITEM_SELECTOR: '.x6nl9eh > div > div > div',
     MODAL_USER_TEXT_NAME_SELECTOR: 'span.x1lliihq span',
     MODAL_USER_ANCHOR_SELECTOR: 'a[role="link"]',
