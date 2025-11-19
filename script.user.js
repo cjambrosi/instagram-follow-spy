@@ -434,7 +434,7 @@
      * @param {*} value - The value to be stored; it will be serialized to a JSON string.
      * @returns {Promise<void>} A promise that resolves when the value has been stored.
     */
-    async setGMValue(key, value) {
+    async setStorageValue(key, value) {
       await GM_setValue(key, JSON.stringify(value));
     },
     /**
@@ -443,7 +443,7 @@
      * @param {string} key - The key associated with the value to retrieve from storage.
      * @returns {Promise<any>} A promise that resolves to the parsed value from storage.
     */
-    async getGMValue(key) {
+    async getStorageValue(key) {
       return JSON.parse(await GM_getValue(key));
     },
     /**
@@ -707,7 +707,7 @@
     updateDataAnalysisOnStorage() {
       if (IS_ENV_DEV) return;
 
-      this.setGMValue(STORAGE_KEY.ANALYSIS_DATA, {
+      this.setStorageValue(STORAGE_KEY.ANALYSIS_DATA, {
         analysisDuration: ANALYSIS_TIMER.DURATION,
         lastAnalizysDate,
         notFollowersList,
@@ -724,7 +724,7 @@
       if (IS_ENV_DEV) return;
 
       try {
-        const value = await this.getGMValue(STORAGE_KEY.ANALYSIS_DATA);
+        const value = await this.getStorageValue(STORAGE_KEY.ANALYSIS_DATA);
 
         if (!value) {
           log("info", `retrieveDataFromLastAnalysis >> "${STORAGE_KEY.ANALYSIS_DATA}" value not found!`, { value });
