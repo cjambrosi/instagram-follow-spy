@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                Instagram Follow Spy
 // @namespace           https://cjambrosi.dev.br
-// @version             1.0.3
+// @version             1.0.4
 // @description         The script is a web scraper for Instagram web, where you can find out who doesn't follow you back and who you don't follow back, with a pleasant and intuitive interface. You can also check the last analysis performed.
 // @description:pt-BR   O script é um web scraper para o Instagram web, onde permite descobrir quem não segue você e quem você não segue de volta com uma interface agradável e intuitiva. Também, é possível conferir a última analise realizada.
 // @author              cjambrosi
@@ -43,7 +43,7 @@
   ];
 
   const MINIFY_CSS = `
-    .floating-button{position:fixed;bottom:50px;right:35px;width:64px;height:64px;border:none;border-radius:9999px;background:linear-gradient(to top right,#3b82f6,#ec4899);box-shadow:0 4px 50px rgb(127 76 76 / .5);cursor:pointer;z-index:9999;transition:transform 0.2s ease-in-out}.floating-button:hover{transform:scale(1.05)}.floating-button:disabled{background:#374151;cursor:not-allowed;box-shadow:none;opacity:.6}.floating-button:disabled:hover{transform:scale(1)}.floating-button>.outline-spy-icon{width:24px;height:24px}.drawer-main{font-family:'Inter',sans-serif;width:100%;max-width:450px;height:100dvh;background-color:#1A1F2C;border-radius:.5rem 0 0 .5rem;color:#fff;margin:0;padding:0;position:fixed;top:0;right:0;z-index:999999;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 40px rgb(0 0 0 / .5);transform:translateX(100%);opacity:0;transition:transform 0.3s ease,opacity 0.3s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:antialiased;-webkit-appearance:optimizelegibility;-moz-appearance:optimizelegibility;appearance:optimizelegibility}.drawer-main.open{transform:translateX(0);opacity:1}.drawer-main *{scrollbar-width:thin;scrollbar-color:#6d6767 #2B2B2B}.drawer-main *::-webkit-scrollbar{width:12px;height:12px}.drawer-main *::-webkit-scrollbar-track{background:#2B2B2B}.drawer-main *::-webkit-scrollbar-thumb{background:#6d6767;border-radius:10px;border:3px solid #fff0;background-clip:content-box}.drawer-main *::-webkit-scrollbar-thumb:hover{background-color:#939393}.drawer-overlay{position:fixed;inset:0;background:rgb(0 0 0 / .6);z-index:999998;transform:translateX(100%);opacity:0;pointer-events:none;transition:opacity 0.3s ease;cursor:not-allowed}.drawer-overlay.open{transform:translateX(0);opacity:1;pointer-events:all}.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid #374151}.drawer-header_title-container{display:flex;justify-content:center;align-items:center;gap:.5rem}.drawer-header_title{font-size:1.25rem;font-weight:700;margin:0}.drawer-header_close-button{background:none;border:none;color:#9CA3AF;padding:.5rem;cursor:pointer;transition:color 0.2s}.drawer-header_close-button:hover{color:#fff}.tabs-container{width:100%}.tabs-container_list{border-bottom:1px solid #374151;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.button-tab-trigger{background:none;border:none;color:#9CA3AF;padding:1rem;cursor:pointer;font-size:1rem;transition:color 0.2s}.button-tab-trigger_counter-badge{margin-left:.5rem;color:#9CA3AF}.button-tab-trigger.active{color:#fff;border-bottom:2px solid #3B82F6}.button-tab-trigger.active .button-tab-trigger_counter-badge{color:#fff}.button-tab-trigger:disabled{color:#374151;cursor:not-allowed}.button-tab-trigger:disabled.active{border-bottom:2px solid #374151}.button-tab-trigger:disabled .button-tab-trigger_counter-badge{color:#374151}.main-content{height:calc(100dvh - 340px);overflow-x:hidden;overflow-y:auto}.user-list{list-style:none;padding:0;margin:0}.user-item{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem;border-bottom:1px solid #374151;transition:background 0.2s}.user-item:last-child{border-bottom:none}.user-item:hover{background-color:#374151}.user-item_info{display:inline-flex;align-items:center;gap:.75rem;width:100%;text-decoration:none!important}.user-item_avatar-container{border:1px solid #fff;border-radius:9999px;max-width:40px;width:100%;height:40px;display:flex;justify-content:center;align-items:center;overflow:hidden}.user-item_avatar-container>.single-user-image{width:42px;height:42px;object-fit:cover}.user-item_avatar-container>.single-user-icon{width:24px;height:24px;object-fit:cover}.user-item_wrapper{display:flex;flex-direction:column;gap:2px}.user-item_name{font-weight:600;color:#fff}.user-item_username{font-size:.875rem;color:#9CA3AF}.user-item_copy-clipboard-button{background:none;border:none;color:#9CA3AF;padding:.5rem;cursor:pointer;transition:color 0.2s;display:flex;align-items:center;justify-content:center}.user-item_copy-clipboard-button>.clipboard-success-icon{display:none}.user-item_copy-clipboard-button.copied>.clipboard-icon{display:none}.user-item_copy-clipboard-button.copied>.clipboard-success-icon{display:block}.drawer-footer{height:191px;display:flex;flex-direction:column;justify-content:space-between;margin-top:20px}.drawer-footer_action-button-container{display:flex;flex-direction:column;justify-content:space-between}.drawer-footer_action-button{border:none;border-radius:100px;color:#fff;cursor:pointer;font-size:1.15rem;font-weight:600;background:linear-gradient(to top right,#3b82f6,#ec4899);box-shadow:0 4px 10px rgb(127 76 76 / .5);height:60px;width:200px;margin:0 auto;transition:transform 0.2s ease-in-out}.drawer-footer_action-button:hover{transform:scale(1.05)}.drawer-footer_action-button:disabled{background:#374151;cursor:not-allowed;box-shadow:none;opacity:.6}.drawer-footer_action-button:disabled:hover{transform:none}.drawer-footer_info-container{display:flex;flex-direction:column;gap:10px;margin-top:1rem;padding:1rem}.drawer-footer_info-container_flex-item{display:flex;align-items:center;justify-content:space-between;gap:5px}.drawer-footer_social-container{border-top:1px solid #374151;display:flex;align-items:center;justify-content:center;gap:5px;height:40px}.drawer-footer_text-info{font-size:.875rem;color:#9CA3AF;margin:0;padding:0}.drawer-footer_link{color:#3B82F6;font-size:.875rem;text-decoration:none;font-weight:400;transition:all 0.2s}.drawer-footer_link:hover{color:#fff;text-decoration:underline}.empty-container{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;height:100%;text-align:center;padding:0 80px}.empty-container_image{width:64px;height:64px;margin-bottom:1rem}.empty-container_title{color:#fff;font-size:1.125rem;font-weight:700;margin:0;padding:0}.empty-container_description{color:#9CA3AF;font-size:.875rem;line-height:1.4;text-align:center;padding:0;margin:0}.error-message-container{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 1rem 2rem}.error-message-container>.alert-icon{width:48px;height:48px;margin-bottom:12px}.error-message-container_title{color:#ea384c;font-size:1.125rem;font-weight:500;margin:0;padding:0;margin-bottom:8px}.error-message-container_description{color:#9CA3AF;font-size:.875rem;line-height:1.4;text-align:center;padding:0;margin:0}.error-message-container_list-text{padding:0 20px 0 50px;margin:0;list-style:disc}.error-message-container_list-text .error-message-container_description{text-align:left}.loading-container{background-color:#374151;border-radius:.5rem;display:flex;align-items:center;gap:1rem;margin:1.5rem 1rem;padding:.5rem 1rem;height:44px}.loading-container>.spinner-icon{animation:spin-loading 1.5s linear infinite}.loading-container_loading-text-container{position:relative;overflow:hidden;min-height:18px;width:100%}.loading-container_title{color:#fff;font-size:1rem;font-weight:600;display:block;position:absolute;width:100%;opacity:0;animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}.loading-container_title_1{animation-name:text-animation-1}.loading-container_title_2{animation-name:text-animation-2}.toast-container{position:relative;width:100%;height:0}.toast-container_toast{display:flex;align-items:center;gap:.5rem;position:absolute;top:-1px;right:0;left:0;width:100%;padding:1rem;background-color:#1A1F2C;box-shadow:0 4px 40px rgb(0 0 0 / .5);transform:translateY(-100%);opacity:0;transition:transform 0.3s ease,opacity 0.3s ease;z-index:100}.toast-container.active .toast-container_toast{transform:translateY(0);opacity:1}.toast_icon-container>.icon{width:20px;height:20px;margin-top:1px}.toast-container_toast.success{background-color:#43CA74}.toast-container_toast.error{background-color:#EA384C}.toast-container_toast.info{background-color:#3B82F6}.toast-container_toast.warning{background-color:#CF9E1E}.toast-container_toast .toast-container_toast_title{color:#fff;font-size:1rem;line-height:1.2;font-weight:600;margin:0;padding:0}.line-break{word-break:break-all}.margin-top-05{margin-top:.5rem}.margin-top-1{margin-top:1rem}.margin-top-2{margin-top:2rem}.not-allowed{cursor:not-allowed}.pointer-events-none{pointer-events:none}@keyframes spin-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes text-animation-1{0%,100%{opacity:0;transform:translateY(100%)}10%,40%{opacity:1;transform:translateY(0)}50%,90%{opacity:0;transform:translateY(-100%)}}@keyframes text-animation-2{0%,50%{opacity:0;transform:translateY(100%)}60%,90%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-100%)}}
+    .floating-button{position:fixed;bottom:50px;right:35px;width:64px;height:64px;border:none;border-radius:9999px;background:linear-gradient(to top right,#3b82f6,#ec4899);box-shadow:0 4px 50px rgb(127 76 76 / .5);cursor:pointer;z-index:9999;transition:transform 0.2s ease-in-out}.floating-button:hover{transform:scale(1.05)}.floating-button:disabled{background:#374151;cursor:not-allowed;box-shadow:none;opacity:.6}.floating-button:disabled:hover{transform:scale(1)}.floating-button>.outline-spy-icon{width:24px;height:24px}.drawer-main{font-family:'Inter',sans-serif;width:100%;max-width:450px;height:100dvh;background-color:#1A1F2C;border-radius:.5rem 0 0 .5rem;color:#fff;margin:0;padding:0;position:fixed;top:0;right:0;z-index:999999;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 4px 40px rgb(0 0 0 / .5);transform:translateX(100%);opacity:0;transition:transform 0.3s ease,opacity 0.3s ease;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:antialiased;-webkit-appearance:optimizelegibility;-moz-appearance:optimizelegibility;appearance:optimizelegibility}.drawer-main.open{transform:translateX(0);opacity:1}.drawer-main *{scrollbar-width:thin;scrollbar-color:#6d6767 #2B2B2B}.drawer-main *::-webkit-scrollbar{width:12px;height:12px}.drawer-main *::-webkit-scrollbar-track{background:#2B2B2B}.drawer-main *::-webkit-scrollbar-thumb{background:#6d6767;border-radius:10px;border:3px solid #fff0;background-clip:content-box}.drawer-main *::-webkit-scrollbar-thumb:hover{background-color:#939393}.drawer-overlay{position:fixed;inset:0;background:rgb(0 0 0 / .6);z-index:999998;transform:translateX(100%);opacity:0;pointer-events:none;transition:opacity 0.3s ease;cursor:not-allowed}.drawer-overlay.open{transform:translateX(0);opacity:1;pointer-events:all}.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:1rem;border-bottom:1px solid #374151}.drawer-header_title-container{display:flex;justify-content:center;align-items:center;gap:.5rem}.drawer-header_title{font-size:1.25rem;font-weight:700;margin:0}.drawer-header_close-button{background:none;border:none;color:#9CA3AF;padding:.5rem;cursor:pointer;transition:color 0.2s}.drawer-header_close-button:hover{color:#fff}.tabs-container{width:100%}.tabs-container_list{border-bottom:1px solid #374151;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:.5rem}.button-tab-trigger{background:none;border:none;color:#9CA3AF;padding:1rem;cursor:pointer;font-size:1rem;transition:color 0.2s}.button-tab-trigger_counter-badge{margin-left:.5rem;color:#9CA3AF}.button-tab-trigger.active{color:#fff;border-bottom:2px solid #3B82F6}.button-tab-trigger.active .button-tab-trigger_counter-badge{color:#fff}.button-tab-trigger:disabled{color:#374151;cursor:not-allowed}.button-tab-trigger:disabled.active{border-bottom:2px solid #374151}.button-tab-trigger:disabled .button-tab-trigger_counter-badge{color:#374151}.main-content{height:calc(100dvh - 340px);overflow-x:hidden;overflow-y:auto}.user-list{list-style:none;padding:0;margin:0}.user-list.hide{display:none}.user-item{display:flex;align-items:center;justify-content:space-between;gap:2rem;padding:1rem;border-bottom:1px solid #374151;transition:background 0.2s}.user-item:last-child{border-bottom:none}.user-item:hover{background-color:#374151}.user-item_info{display:inline-flex;align-items:center;gap:.75rem;width:100%;text-decoration:none!important}.user-item_avatar-container{border:1px solid #fff;border-radius:9999px;max-width:40px;width:100%;height:40px;display:flex;justify-content:center;align-items:center;overflow:hidden}.user-item_avatar-container>.single-user-image{width:42px;height:42px;object-fit:cover}.user-item_avatar-container>.single-user-icon{width:24px;height:24px;object-fit:cover}.user-item_wrapper{display:flex;flex-direction:column;gap:2px}.user-item_name{font-weight:600;color:#fff}.user-item_username{font-size:.875rem;color:#9CA3AF}.user-item_copy-clipboard-button{background:none;border:none;color:#9CA3AF;padding:.5rem;cursor:pointer;transition:color 0.2s;display:flex;align-items:center;justify-content:center}.user-item_copy-clipboard-button>.clipboard-success-icon{display:none}.user-item_copy-clipboard-button.copied>.clipboard-icon{display:none}.user-item_copy-clipboard-button.copied>.clipboard-success-icon{display:block}.drawer-footer{height:191px;display:flex;flex-direction:column;justify-content:space-between;margin-top:20px}.drawer-footer_action-button-container{display:flex;flex-direction:column;justify-content:space-between}.drawer-footer_action-button{border:none;border-radius:100px;color:#fff;cursor:pointer;font-size:1.15rem;font-weight:600;background:linear-gradient(to top right,#3b82f6,#ec4899);box-shadow:0 4px 10px rgb(127 76 76 / .5);height:60px;width:200px;margin:0 auto;transition:transform 0.2s ease-in-out}.drawer-footer_action-button:hover{transform:scale(1.05)}.drawer-footer_action-button:disabled{background:#374151;cursor:not-allowed;box-shadow:none;opacity:.6}.drawer-footer_action-button:disabled:hover{transform:none}.drawer-footer_info-container{display:flex;flex-direction:column;gap:10px;margin-top:1rem;padding:1rem}.drawer-footer_info-container_flex-item{display:flex;align-items:center;justify-content:space-between;gap:5px}.drawer-footer_social-container{border-top:1px solid #374151;display:flex;align-items:center;justify-content:center;gap:5px;height:40px}.drawer-footer_text-info{font-size:.875rem;color:#9CA3AF;margin:0;padding:0}.drawer-footer_link{color:#3B82F6;font-size:.875rem;text-decoration:none;font-weight:400;transition:all 0.2s}.drawer-footer_link:hover{color:#fff;text-decoration:underline}.empty-container{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;height:100%;text-align:center;padding:0 80px}.empty-container_image{width:64px;height:64px;margin-bottom:1rem}.empty-container_title{color:#fff;font-size:1.125rem;font-weight:700;margin:0;padding:0}.empty-container_description{color:#9CA3AF;font-size:.875rem;line-height:1.4;text-align:center;padding:0;margin:0}.error-message-container{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5rem 1rem 2rem}.error-message-container>.alert-icon{width:48px;height:48px;margin-bottom:12px}.error-message-container_title{color:#ea384c;font-size:1.125rem;font-weight:500;margin:0;padding:0;margin-bottom:8px}.error-message-container_description{color:#9CA3AF;font-size:.875rem;line-height:1.4;text-align:center;padding:0;margin:0}.error-message-container_list-text{padding:0 20px 0 50px;margin:0;list-style:disc}.error-message-container_list-text .error-message-container_description{text-align:left}.loading-container{background-color:#374151;border-radius:.5rem;display:flex;align-items:center;gap:1rem;margin:1.5rem 1rem;padding:.5rem 1rem;height:44px}.loading-container>.spinner-icon{animation:spin-loading 1.5s linear infinite}.loading-container_loading-text-container{position:relative;overflow:hidden;min-height:18px;width:100%}.loading-container_title{color:#fff;font-size:1rem;font-weight:600;display:block;position:absolute;width:100%;opacity:0;animation-duration:6s;animation-iteration-count:infinite;animation-timing-function:ease-in-out}.loading-container_title_1{animation-name:text-animation-1}.loading-container_title_2{animation-name:text-animation-2}.toast-container{position:relative;width:100%;height:0}.toast-container_toast{display:flex;align-items:center;gap:.5rem;position:absolute;top:-1px;right:0;left:0;width:100%;padding:1rem;background-color:#1A1F2C;box-shadow:0 4px 40px rgb(0 0 0 / .5);transform:translateY(-100%);opacity:0;transition:transform 0.3s ease,opacity 0.3s ease;z-index:100}.toast-container.active .toast-container_toast{transform:translateY(0);opacity:1}.toast_icon-container>.icon{width:20px;height:20px;margin-top:1px}.toast-container_toast.success{background-color:#43CA74}.toast-container_toast.error{background-color:#EA384C}.toast-container_toast.info{background-color:#3B82F6}.toast-container_toast.warning{background-color:#CF9E1E}.toast-container_toast .toast-container_toast_title{color:#fff;font-size:1rem;line-height:1.2;font-weight:600;margin:0;padding:0}.line-break{word-break:break-all}.margin-top-05{margin-top:.5rem}.margin-top-1{margin-top:1rem}.margin-top-2{margin-top:2rem}.not-allowed{cursor:not-allowed}.pointer-events-none{pointer-events:none}@keyframes spin-loading{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes text-animation-1{0%,100%{opacity:0;transform:translateY(100%)}10%,40%{opacity:1;transform:translateY(0)}50%,90%{opacity:0;transform:translateY(-100%)}}@keyframes text-animation-2{0%,50%{opacity:0;transform:translateY(100%)}60%,90%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-100%)}}
   `;
 
   const IS_ENV_DEV = false;
@@ -208,7 +208,8 @@
     BUTTON_NOT_FOLLOWING_TAB_TRIGGER: `${PREFIX}button-tab-trigger_not-following`,
     DRAWER_ACTION_BUTTON_CONTAINER: `${PREFIX}drawer-action-button-container`,
     DRAWER_ACTION_BUTTON: `${PREFIX}drawer-action-button`,
-    USER_LIST_CONTAINER: `${PREFIX}user-list`,
+    NOT_FOLLOWER_LIST_CONTAINER: `${PREFIX}not-followers-list`,
+    NOT_FOLLOWING_LIST_CONTAINER: `${PREFIX}not-following-list`,
     USER_CLIPBOARD_BUTTON: `${PREFIX}user-clipboard-button`,
     FOOTER_ANALYSIS_DATE_VALUE: `${PREFIX}footer-analysis-date-value`,
     FOOTER_ANALYSIS_TIME_VALUE: `${PREFIX}footer-analysis-time-value`,
@@ -434,7 +435,7 @@
      * @param {*} value - The value to be stored; it will be serialized to a JSON string.
      * @returns {Promise<void>} A promise that resolves when the value has been stored.
     */
-    async setGMValue(key, value) {
+    async setStorageValue(key, value) {
       await GM_setValue(key, JSON.stringify(value));
     },
     /**
@@ -443,7 +444,7 @@
      * @param {string} key - The key associated with the value to retrieve from storage.
      * @returns {Promise<any>} A promise that resolves to the parsed value from storage.
     */
-    async getGMValue(key) {
+    async getStorageValue(key) {
       return JSON.parse(await GM_getValue(key));
     },
     /**
@@ -707,7 +708,7 @@
     updateDataAnalysisOnStorage() {
       if (IS_ENV_DEV) return;
 
-      this.setGMValue(STORAGE_KEY.ANALYSIS_DATA, {
+      this.setStorageValue(STORAGE_KEY.ANALYSIS_DATA, {
         analysisDuration: ANALYSIS_TIMER.DURATION,
         lastAnalizysDate,
         notFollowersList,
@@ -724,7 +725,7 @@
       if (IS_ENV_DEV) return;
 
       try {
-        const value = await this.getGMValue(STORAGE_KEY.ANALYSIS_DATA);
+        const value = await this.getStorageValue(STORAGE_KEY.ANALYSIS_DATA);
 
         if (!value) {
           log("info", `retrieveDataFromLastAnalysis >> "${STORAGE_KEY.ANALYSIS_DATA}" value not found!`, { value });
@@ -787,11 +788,11 @@
         }
       }, timeout);
     },
-     /**
-     * Initiates the analysis process for the followings modal.
-     * @param {string} selector - The DOM element selector for the followings modal to analyze.
-     * @returns {void}
-    */
+    /**
+    * Initiates the analysis process for the followings modal.
+    * @param {string} selector - The DOM element selector for the followings modal to analyze.
+    * @returns {void}
+   */
     startAnalysisFollowingModal(selector) {
       const timeout = 2000;
 
@@ -876,7 +877,9 @@
     */
     toggleVisibleFollowingModal(action) {
       if (action === MODAL_ACTION_TYPE.CLOSE) {
-        const closeButtonElem = document.querySelector(GENERAL_CONFIG.FOLLOWING_MODAL_CLOSE_BUTTON_SELECTOR);
+        const closeButtonElem = document.querySelector(
+          GENERAL_CONFIG.FOLLOWING_MODAL_CLOSE_BUTTON_SELECTOR
+        );
         if (!closeButtonElem) return;
 
         closeButtonElem.click();
@@ -929,14 +932,40 @@
       HelpersModule.reset();
     },
     /**
+     * Handles the user list selection event in the UI.
+     * Updates the visibility of the user lists based on the current flow type.
+     * @returns {void}
+    */
+    onSelectUserList() {
+      const notFollowersListElement = document.getElementById(
+        DOM_ELEMENT_ID.NOT_FOLLOWER_LIST_CONTAINER
+      );
+      const notFollowingListElement = document.getElementById(
+        DOM_ELEMENT_ID.NOT_FOLLOWING_LIST_CONTAINER
+      );
+
+      if (!notFollowersListElement || !notFollowingListElement) {
+        return;
+      };
+
+      if (flow === FLOW_TYPE.NOT_FOLLOWERS) {
+        notFollowersListElement.classList.remove('hide');
+        notFollowingListElement.classList.add('hide');
+      } else {
+        notFollowingListElement.classList.remove('hide');
+        notFollowersListElement.classList.add('hide');
+      };
+    },
+    /**
      * Handles the tab selection event in the UI.
      * Updates the active tab styling and sets the current flow type based on the selected tab.
-     * Loads the corresponding content for the selected context.
      * @param {{ target: { dataset: { value: FLOW_TYPE } } }} event - The event object triggered by selecting a tab.
      * @returns {void}
     */
     onSelectTab(event) {
-      const mainContent = document.getElementById(DOM_ELEMENT_ID.DRAWER_MAIN_CONTENT);
+      const mainContent = document.getElementById(
+        DOM_ELEMENT_ID.DRAWER_MAIN_CONTENT
+      );
       if (!mainContent) return;
 
       const target = event.target;
@@ -944,8 +973,12 @@
 
       if (!flowValueFromTarget) return;
 
-      const tabNotFollowersButton = document.getElementById(DOM_ELEMENT_ID.BUTTON_NOT_FOLLOWERS_TAB_TRIGGER);
-      const tabNotFollowingButton = document.getElementById(DOM_ELEMENT_ID.BUTTON_NOT_FOLLOWING_TAB_TRIGGER);
+      const tabNotFollowersButton = document.getElementById(
+        DOM_ELEMENT_ID.BUTTON_NOT_FOLLOWERS_TAB_TRIGGER
+      );
+      const tabNotFollowingButton = document.getElementById(
+        DOM_ELEMENT_ID.BUTTON_NOT_FOLLOWING_TAB_TRIGGER
+      );
 
       if (flowValueFromTarget === FLOW_TYPE.NOT_FOLLOWERS) {
         flow = FLOW_TYPE.NOT_FOLLOWERS;
@@ -957,7 +990,7 @@
         tabNotFollowingButton.classList.add('active');
       }
 
-      UIModule.loadContentByContext();
+      HandlersModule.onSelectUserList();
     },
     /**
      * Handles the analysis process when triggered.
@@ -1141,17 +1174,21 @@
       };
     },
     /**
-     * Renders a normalized list of users in the Drawer's main content element.
+     *
+     * @param {string} elementId - DOM Element ID of the content list.
      * @param {Array<User>} userList - Array of user objects to display.
-     * @returns {void}
+     * @returns {HTMLUListElement | null} Returns the generated <ul> element or `null` if the list is empty.
     */
-    userListContent(userList) {
-      const mainContentElem = document.getElementById(DOM_ELEMENT_ID.DRAWER_MAIN_CONTENT);
-      if (!mainContentElem) return;
+    buildUserList(elementId, userList) {
+      const isHideList = elementId === DOM_ELEMENT_ID.NOT_FOLLOWING_LIST_CONTAINER;
 
       const ul = document.createElement('ul');
-      ul.id = DOM_ELEMENT_ID.USER_LIST_CONTAINER;
-      ul.className = 'user-list';
+      ul.id = elementId;
+      ul.className = `user-list ${isHideList ? 'hide' : ''}`.trim();
+
+      if (!userList || userList?.length === 0) {
+        return null;
+      };
 
       userList.forEach((user) => {
         const li = document.createElement('li');
@@ -1215,7 +1252,30 @@
         }
       });
 
-      mainContentElem.replaceChildren(ul);
+      return ul;
+    },
+    /**
+     * Renders a normalized list of users in the Drawer's main content element.
+     * @returns {void}
+    */
+    renderUserListContent() {
+      const mainContentElem = document.getElementById(DOM_ELEMENT_ID.DRAWER_MAIN_CONTENT);
+      if (!mainContentElem) return;
+
+      const notFollowersListElement = this.buildUserList(
+        DOM_ELEMENT_ID.NOT_FOLLOWER_LIST_CONTAINER,
+        notFollowersList
+      );
+
+      const notFollowingListElement = this.buildUserList(
+        DOM_ELEMENT_ID.NOT_FOLLOWING_LIST_CONTAINER,
+        notFollowingList
+      );
+
+      mainContentElem.replaceChildren(
+        notFollowersListElement,
+        notFollowingListElement
+      );
     },
     /**
      * Replaces the main content area with an "empty" state, displaying a message and illustration.
@@ -1341,7 +1401,7 @@
       switch (flow) {
         case FLOW_TYPE.NOT_FOLLOWERS: {
           if (notFollowersList.length > 0) {
-            this.userListContent(notFollowersList);
+            this.renderUserListContent();
             return;
           };
 
@@ -1356,7 +1416,7 @@
 
         case FLOW_TYPE.NOT_FOLLOWING: {
           if (notFollowingList.length > 0) {
-            this.userListContent(notFollowingList);
+            this.renderUserListContent();
             return;
           };
 
@@ -1492,8 +1552,8 @@
 
     UIModule.createFloatingButton();
     UIModule.createDrawer();
-    UIModule.loadSelectTabs();
     UIModule.loadContentByContext();
+    UIModule.loadSelectTabs();
   };
 
   window.addEventListener('load', () => {
