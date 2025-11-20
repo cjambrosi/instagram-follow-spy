@@ -54,7 +54,7 @@ Usage examples.
 
 ### Finding the Selector for the User List Container
 
-Normalmente, os seletores sãos os mesmos tanto para o modal de Followers, quanto para o modal de Following.
+Typically, the selectors are the same for both the Followers modal and the Following modal.
 
 1. Open the **Followers** or **Following** modal;
 2. Inspect the element and find the main `div` of the modal;
