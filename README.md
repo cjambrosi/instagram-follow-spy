@@ -47,3 +47,19 @@ You can also:
 
 - :star2: give a star in this repository
 - :heavy_heart_exclamation: share this project and recommending it to your friends
+
+## Examples
+
+Usage examples.
+
+### Finding the Selector for the User List Container
+
+Normalmente, os seletores sãos os mesmos tanto para o modal de Followers, quanto para o modal de Following.
+
+1. Open the **Followers** or **Following** modal;
+2. Inspect the element and find the main `div` of the modal;
+3. Go down until you find the `div` responsible for the `scroll`;
+4. Copy the style classes and replace them in the `FOLLOWERS_MODAL_LIST_CONTAINER_SELECTOR` and `FOLLOWING_MODAL_LIST_CONTAINER_SELECTOR` variables. Remember to keep the `div` selector together with the classes.
+
+Step by step:
+![modal-list-container-selector](./assets/find-modal-list-container-selector.gif)
