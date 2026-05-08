@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name                Instagram Follow Spy
 // @namespace           https://cjambrosi.dev.br
-// @version             1.0.4
+// @version             1.0.5
 // @description         The script is a web scraper for Instagram web, where you can find out who doesn't follow you back and who you don't follow back, with a pleasant and intuitive interface. You can also check the last analysis performed.
 // @description:pt-BR   O script é um web scraper para o Instagram web, onde permite descobrir quem não segue você e quem você não segue de volta com uma interface agradável e intuitiva. Também, é possível conferir a última analise realizada.
 // @author              cjambrosi
@@ -55,8 +55,8 @@
 
   const GENERAL_CONFIG = {
     INSTAGRAM_URL: 'https://www.instagram.com',
-    FOLLOWERS_ANCHOR_HREF: 'a[href$="/followers/"]',
-    FOLLOWING_ANCHOR_HREF: 'a[href$="/following/"]',
+    FOLLOWERS_ANCHOR_HREF: 'section.x98rzlu.xeuugli > div > div > div > a[href="#"][role="link"]',
+    FOLLOWING_ANCHOR_HREF: 'section.x98rzlu.xeuugli > div > div > div > a[href="#"][role="link"]',
     FOLLOWERS_MODAL_CLOSE_BUTTON_SELECTOR: 'button._abl-',
     FOLLOWERS_MODAL_CONTAINER_SELECTOR: 'div[role="dialog"]',
     // Scroll container DOM element
@@ -394,8 +394,8 @@
      * @returns {boolean} Returns true if the user is on the correct page, false otherwise.
     */
     isEnableToAnalyze() {
-      const hasFollowersAnchor = this.hasFollowersAnchorInDOM();
-      const hasFollowingAnchor = this.hasFollowingAnchorInDOM();
+      const hasFollowersAnchor = !!this.getFollowersAnchorInDOM();
+      const hasFollowingAnchor = !!this.getFollowingAnchorInDOM();
 
       if (!hasFollowersAnchor && !hasFollowingAnchor) {
         status = STATUS_TYPE.ERROR;
@@ -406,17 +406,25 @@
     },
     /**
      * Checks if the followers anchor element exists in the DOM.
-     * @returns {boolean} Returns true if the followers anchor element is present, otherwise false.
+     * @returns {Element | null} Returns element if the followers anchor element is present, otherwise null.
     */
-    hasFollowersAnchorInDOM() {
-      return !!document.querySelector(GENERAL_CONFIG.FOLLOWERS_ANCHOR_HREF);
+    getFollowersAnchorInDOM() {
+      const elements = document.querySelectorAll(
+        GENERAL_CONFIG.FOLLOWERS_ANCHOR_HREF,
+      );
+
+      return elements.item(1);
     },
     /**
      * Checks if the followings anchor element exists in the DOM.
-     * @returns {boolean} Returns true if the followings anchor element is present, otherwise false.
+     * @returns {Element | null} Returns element if the followings anchor element is present, otherwise null.
     */
-    hasFollowingAnchorInDOM() {
-      return !!document.querySelector(GENERAL_CONFIG.FOLLOWING_ANCHOR_HREF);
+    getFollowingAnchorInDOM() {
+      const elements = document.querySelectorAll(
+        GENERAL_CONFIG.FOLLOWING_ANCHOR_HREF,
+      );
+
+      return elements.item(2);
     },
     /**
      * Checks if either the followers or following modal is currently open on the page.
@@ -851,7 +859,7 @@
           return;
         }
 
-        const anchorElem = document.querySelector(GENERAL_CONFIG.FOLLOWERS_ANCHOR_HREF);
+        const anchorElem = HelpersModule.getFollowersAnchorInDOM();
         if (!anchorElem) return;
 
         ANALYSIS_TIMER.START = performance.now();
@@ -886,7 +894,7 @@
         return;
       }
 
-      const anchorElem = document.querySelector(GENERAL_CONFIG.FOLLOWING_ANCHOR_HREF);
+      const anchorElem = HelpersModule.getFollowingAnchorInDOM();
       if (!anchorElem) return;
 
       UIModule.loadContentByContext();
